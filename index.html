@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ビデオデータ化便｜ビデオテープを郵送でデータ化（全国対応）</title>
+<meta name="description" content="VHS・8mm・miniDVのビデオテープを郵送で受け付け、スマホで見られるデータにしてお返しします。3本3,600円、テープが届いてから10日ほどでお届け。全国対応。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* デジタル庁デザインシステム tokens.css の名前と値（_手本/デジタル庁_tokens.css） */
+:root {
+  --color-primitive-blue-50: #e8f1fe;
+  --color-primitive-blue-200: #c5d7fb;
+  --color-primitive-blue-900: #0017c1;
+  --color-primitive-blue-1000: #00118f;
+  --color-primitive-orange-800: #c74700;
+  --color-neutral-white: #ffffff;
+  --color-neutral-solid-gray-50: #f2f2f2;
+  --color-neutral-solid-gray-200: #cccccc;
+  --color-neutral-solid-gray-600: #666666;
+  --color-neutral-solid-gray-800: #333333;
+  --color-neutral-solid-gray-900: #1a1a1a;
+  --font-family-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-16: 1rem;
+  --font-size-18: 1.125rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-32: 2rem;
+  --border-radius-8: 0.5rem;
+  --border-radius-12: 0.75rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-18);
+  line-height: 1.7;
+  color: var(--color-neutral-solid-gray-900);
+  background: var(--color-neutral-white);
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+a { color: var(--color-primitive-blue-900); text-underline-offset: 3px; }
+a:hover { color: var(--color-primitive-blue-1000); }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+header.site { border-bottom: 1px solid var(--color-neutral-solid-gray-200); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.logo { font-weight: 700; font-size: var(--font-size-20); color: var(--color-neutral-solid-gray-900); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo svg { color: var(--color-primitive-blue-900); }
+nav.top a { font-size: var(--font-size-16); margin-left: 16px; }
+@media (max-width: 600px) { nav.top { display: none; } }
+
+.hero { padding: 48px 0 40px; border-bottom: 1px solid var(--color-neutral-solid-gray-200); }
+.hero h1 { font-size: var(--font-size-32); line-height: 1.4; margin: 0 0 16px; }
+.hero p.lead { margin: 0 0 24px; }
+.hero ul.facts { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 8px; }
+.hero ul.facts li { display: flex; gap: 10px; align-items: flex-start; }
+.hero ul.facts svg { flex: none; margin-top: 4px; color: var(--color-primitive-blue-900); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 56px; padding: 12px 28px;
+  background: var(--color-primitive-blue-900); color: var(--color-neutral-white);
+  font-weight: 700; font-size: var(--font-size-18); text-decoration: none;
+  border-radius: var(--border-radius-8);
+}
+.btn:hover { background: var(--color-primitive-blue-1000); color: var(--color-neutral-white); }
+.btn:focus-visible { outline: 4px solid #ffd43d; outline-offset: 2px; }
+.nw { display: inline-block; }
+.note { font-size: var(--font-size-16); color: var(--color-neutral-solid-gray-600); }
+
+section { padding: 48px 0; border-bottom: 1px solid var(--color-neutral-solid-gray-200); }
+section h2 { font-size: var(--font-size-24); line-height: 1.5; margin: 0 0 24px; }
+section h3 { font-size: var(--font-size-20); margin: 32px 0 12px; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--color-neutral-solid-gray-200); vertical-align: top; }
+th { font-weight: 400; }
+td.price { font-weight: 700; white-space: nowrap; text-align: right; }
+thead th { font-size: var(--font-size-16); color: var(--color-neutral-solid-gray-600); }
+
+.example { background: var(--color-primitive-blue-50); border-radius: var(--border-radius-12); padding: 20px; margin-top: 24px; }
+.example p { margin: 0; }
+.example p + p { margin-top: 4px; }
+
+.tapes { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.tapes li { border: 1px solid var(--color-neutral-solid-gray-200); border-radius: var(--border-radius-8); padding: 6px 14px; font-size: var(--font-size-16); }
+
+ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; display: grid; gap: 28px; }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 16px; }
+ol.steps li::before {
+  content: counter(s); width: 44px; height: 44px; border-radius: 50%;
+  border: 2px solid var(--color-primitive-blue-900); color: var(--color-primitive-blue-900);
+  font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+ol.steps h3 { margin: 6px 0 4px; font-size: var(--font-size-20); }
+ol.steps p { margin: 0; }
+
+ul.plain { padding-left: 1.2em; margin: 0; }
+ul.plain li + li { margin-top: 8px; }
+.ng { display: grid; gap: 12px; padding: 0; list-style: none; margin: 0; }
+.ng li { display: flex; gap: 10px; align-items: flex-start; }
+.ng svg { flex: none; margin-top: 4px; color: var(--color-primitive-orange-800); }
+
+dl.faq dt { font-weight: 700; margin-top: 24px; }
+dl.faq dt:first-child { margin-top: 0; }
+dl.faq dd { margin: 6px 0 0; }
+
+.apply { background: var(--color-neutral-solid-gray-50); }
+.apply p { margin: 0 0 24px; }
+
+dl.law { display: grid; grid-template-columns: 11em 1fr; margin: 0; font-size: var(--font-size-16); }
+dl.law dt, dl.law dd { padding: 12px 0; border-bottom: 1px solid var(--color-neutral-solid-gray-200); margin: 0; }
+dl.law dt { font-weight: 700; padding-right: 16px; }
+@media (max-width: 600px) {
+  dl.law { grid-template-columns: 1fr; }
+  dl.law dt { border-bottom: 0; padding-bottom: 0; }
+  .hero h1 { font-size: 1.75rem; }
+  th, td { padding: 12px 8px; }
+}
+footer { padding: 32px 0 48px; font-size: var(--font-size-16); color: var(--color-neutral-solid-gray-600); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="./"><i data-lucide="video" aria-hidden="true"></i>ビデオデータ化便</a>
+    <nav class="top" aria-label="ページ内の案内">
+      <a href="#price">料金</a><a href="#flow">流れ</a><a href="#faq">よくある質問</a><a href="#apply">申し込む</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1><span class="nw">ビデオテープを、</span><span class="nw">スマホで見られる</span><span class="nw">データに。</span></h1>
+      <p class="lead">押し入れのビデオテープを郵送していただければ、スマホやパソコンで見られる動画データにしてお返しします。全国どこからでも受け付けます。</p>
+      <ul class="facts">
+        <li><i data-lucide="circle-check" aria-hidden="true"></i><span><span class="nw">3本まで <strong>3,600円</strong></span><span class="nw">（4本目から1本1,200円）</span></span></li>
+        <li><i data-lucide="circle-check" aria-hidden="true"></i><span>お支払いを確かめてから<span class="nw"><strong>10日ほど</strong>でお届け</span></span></li>
+        <li><i data-lucide="circle-check" aria-hidden="true"></i><span>ダウンロードでのお渡しは追加料金なし。USBメモリでも受け取れます</span></li>
+        <li><i data-lucide="circle-check" aria-hidden="true"></i><span>お支払いは、<span class="nw">テープが届いて</span><span class="nw">本数を確かめてから</span></span></li>
+      </ul>
+      <a class="btn" href="#apply">申し込む（無料）<i data-lucide="arrow-right" aria-hidden="true"></i></a>
+      <p class="note">申し込んだだけでは料金はかかりません。</p>
+    </div>
+  </div>
+
+  <section id="price">
+    <div class="wrap">
+      <h2>料金</h2>
+      <table>
+        <thead><tr><th scope="col">内容</th><th scope="col" style="text-align:right">料金（税込）</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1〜3本（1本でも同じ）</th><td class="price">3,600円</td></tr>
+          <tr><th scope="row">4本目から</th><td class="price">1本 1,200円</td></tr>
+          <tr><th scope="row">10本以上のまとめ（全部の本数に適用）</th><td class="price">1本 1,000円</td></tr>
+        </tbody>
+      </table>
+      <p class="note">1本3時間までの録画は同じ料金です。3時間を超えるテープは、1本につき600円を足します。3倍モードで録ったテープは超えることがあります。請求のメールで1本ずつの時間と金額をお知らせし、ご了承をいただいてから作業を始めます。</p>
+      <p class="note">9本のときは、10本にした方が合計は安くなります（9本 10,800円、10本 10,000円）。</p>
+
+      <h3>納品のかたち</h3>
+      <table>
+        <tbody>
+          <tr><th scope="row">ダウンロード（標準）<br><span class="note">リンクをお送りします。30日間ダウンロードできます。</span></th><td class="price">0円</td></tr>
+          <tr><th scope="row">USBメモリで郵送<br><span class="note">パソコンが無い方に。テープと一緒にお送りします。</span></th><td class="price">＋2,000円</td></tr>
+          <tr><th scope="row">ポータブルHDDで郵送<br><span class="note">20本以上の方に。</span></th><td class="price">＋8,000円</td></tr>
+          <tr><th scope="row">お急ぎ仕上げ（お支払いから5日）</th><td class="price">取り込み料金の＋50％</td></tr>
+        </tbody>
+      </table>
+
+      <h3>送料</h3>
+      <ul class="plain">
+        <li>テープを送るときの送料は、お客様のご負担です。追跡のつく方法（宅急便・レターパックなど）で送ってください。届いたら、その日のうちにメールでお知らせします。</li>
+        <li>テープの返却を希望される場合は、返送の送料（実費）をいただきます。返却しない場合は、こちらで責任をもって処分します（無料）。</li>
+      </ul>
+
+      <div class="example">
+        <p><strong>例：VHS 5本をダウンロードで受け取り、テープは処分</strong></p>
+        <p>3,600円 ＋ 1,200円 × 2本 ＝ <strong>6,000円</strong>（ほかに、送るときの送料）</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tapes">
+    <div class="wrap">
+      <h2>対応しているテープ</h2>
+      <ul class="tapes">
+        <li>VHS</li><li>VHS-C</li><li>S-VHS</li><li>8mmビデオ</li><li>Hi8</li><li>Digital8</li><li>miniDV</li><li>DVD</li>
+      </ul>
+      <p class="note">DVDは、ご家庭で撮影・録画したものに限り、テープと同じ料金です。分からないテープは、写真を添えてご相談ください。</p>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <h2>ご利用の流れ</h2>
+      <ol class="steps">
+        <li><div><h3>申し込む</h3><p>このページの申込フォームに、本数・納品のかたち・テープの返却か処分かを書いてください。送り先の住所を、メールでお知らせします。</p></div></li>
+        <li><div><h3>テープを送る</h3><p>箱や袋は何でも構いません。緩衝材で包んでいただければ十分です。コンビニや宅配の集荷を使えば、家から出ずに送れます。</p></div></li>
+        <li><div><h3>代金を振り込む</h3><p>テープが届いたら、本数を確かめて請求額をメールでお知らせします。銀行振込でお支払いください。</p></div></li>
+        <li><div><h3>データを受け取る</h3><p>お支払いを確かめてから10日ほどで、ダウンロードのリンクをお送りします。スマホでそのまま再生できます。</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="ng">
+    <div class="wrap">
+      <h2>お受けできないテープ</h2>
+      <ul class="ng">
+        <li><i data-lucide="ban" aria-hidden="true"></i><span>市販・レンタルのビデオ（映画・アニメ・ライブなど）</span></li>
+        <li><i data-lucide="ban" aria-hidden="true"></i><span>テレビ番組を録画したテープ</span></li>
+        <li><i data-lucide="ban" aria-hidden="true"></i><span>コピー防止の信号が入ったテープ</span></li>
+      </ul>
+      <p class="note">著作権法により、ご家庭で撮影した映像に限らせていただいています。</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>よくある質問</h2>
+      <dl class="faq">
+        <dt>カビが生えている、テープが切れている</dt>
+        <dd>作業の前に状態を確かめ、取り込めないと分かった時点でご連絡します。その時点でのキャンセルは無料です。本格的なクリーニングや修理は行っていません。</dd>
+        <dt>データはどんな形ですか</dt>
+        <dd>MP4という、スマホ・パソコン・テレビのどれでも再生できる動画の形でお渡しします。</dd>
+        <dt>データはいつまで残りますか</dt>
+        <dd>お渡ししてから30日で、こちらのデータは削除します。届いたら、必ずご自身で保存してください。</dd>
+        <dt>キャンセルはできますか</dt>
+        <dd>テープを送る前と、作業を始める前は、キャンセル料はかかりません（テープの返却を希望される場合だけ、返送の送料をいただきます）。作業を始めたあとは、取り込みを終えた本数ぶんの料金だけをいただき、残りはお返しします。お渡ししたあとは、キャンセルできません。</dd>
+        <dt>取り込めなかったテープの料金は</dt>
+        <dd>いただきません。お支払いのあとで分かった場合は、その分をお返しします。テレビ番組など、お受けできない映像が混ざっていた部分は取り込みませんが、料金は変わりません。</dd>
+        <dt>送る途中や、預けている間になくなったら</dt>
+        <dd>こちらでお預かりしている間に壊したりなくしたりした場合は、いただいた料金を全額お返しします。映っている映像そのものはお金に換えられないため、補償はその範囲までになります。送るときは追跡のつく方法をお使いください。</dd>
+        <dt>スマホの容量が足りるか心配です</dt>
+        <dd>1時間の映像で、およそ1〜2GBになります。容量が足りない方や、テレビで見たい方は、USBメモリでの受け取りが向いています。テレビの差し込み口にUSBメモリを挿すだけで見られる機種も多くあります。保存のしかたは、ダウンロードのリンクと一緒にお送りします。</dd>
+        <dt>中身を見られるのが心配です</dt>
+        <dd>映像は取り込みと確認のためだけに見ます。ほかの目的には使わず、外にも出しません。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="apply" class="apply">
+    <div class="wrap">
+      <h2>申し込む</h2>
+      <p>フォームは2分ほどで書けます。申し込んだだけでは料金はかかりません。2日以内に、送り先と次の手順をメールでお送りします。</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZNxud_Lj5nyejPTcHkuANFw50s55cV580R5ox6dxPLZIY7A/viewform" target="_blank" rel="noopener">申込フォームを開く<i data-lucide="external-link" aria-hidden="true"></i></a>
+      <p class="note" style="margin-top:16px">ご相談だけでも、同じフォームから送れます。</p>
+    </div>
+  </section>
+
+  <section id="law">
+    <div class="wrap">
+      <h2>特定商取引法に基づく表記</h2>
+      <dl class="law">
+        <dt>販売事業者</dt><dd>ビデオデータ化便（運営：丸井 康弘）</dd>
+        <dt>所在地・電話番号</dt><dd>ご請求があれば、遅滞なく開示します。申込フォームからご請求ください。</dd>
+        <dt>連絡先</dt><dd>申込フォームからお問い合わせください。</dd>
+        <dt>販売価格</dt><dd>このページの「料金」に書いたとおりです（税込）。</dd>
+        <dt>商品代金以外の費用</dt><dd>テープを送る送料、返却を希望される場合の返送料、振込手数料。</dd>
+        <dt>支払方法と時期</dt><dd>銀行振込。テープが届いて本数を確かめたあと、請求のメールから7日以内。</dd>
+        <dt>引き渡しの時期</dt><dd>お支払いを確かめてから10日ほど（お急ぎ仕上げは5日）。</dd>
+        <dt>キャンセル</dt><dd>「よくある質問」のキャンセルの項に書いたとおりです。作業の性質上、お渡し後の返品はお受けできません。取り込みの不備がある場合は、1回まで無料でやり直します。</dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 ビデオデータ化便</div>
+</footer>
+
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
